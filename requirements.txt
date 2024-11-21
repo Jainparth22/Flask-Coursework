@@ -1,0 +1,11 @@
+# ============================================
+# Flask Coursework — All Dependencies
+# ============================================
+# Install: pip install -r requirements.txt
+# ============================================
+
+# --- Core ---
+Flask>=3.1.0
+Werkzeug>=3.1.0
+Jinja2>=3.1.0
+
