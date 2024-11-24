@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} — {{ app_name }}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        nav { background: #2c3e50; padding: 1rem 2rem; }
+        nav a { color: #ecf0f1; text-decoration: none; margin-right: 1.5rem; font-weight: 500; }
+        nav a:hover { color: #3498db; }
+        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        h1 { color: #2c3e50; margin-bottom: 1rem; }
+        footer { text-align: center; padding: 2rem; color: #888; margin-top: 3rem; border-top: 1px solid #ddd; }
+        code { background: #eef; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+
+        {# This is a Jinja2 comment — it won't appear in the HTML output #}
+        {% block extra_styles %}{% endblock %}
+    </style>
+</head>
+<body>
+    {# ---- NAVIGATION (uses context_processor data) ---- #}
+    <nav>
+        {% for link in nav_links %}
+            <a href="{{ link.url }}">{{ link.label }}</a>
+        {% endfor %}
+    </nav>
+
+    {# ---- MAIN CONTENT (child templates override this block) ---- #}
+    <div class="container">
+        {% block content %}
+            <p>No content provided.</p>
+        {% endblock %}
+    </div>
+
+    {# ---- FOOTER ---- #}
+    <footer>
+        <p>&copy; {{ current_year }} {{ app_name }}</p>
+        {% block footer_extra %}{% endblock %}
+    </footer>
+</body>
+</html>

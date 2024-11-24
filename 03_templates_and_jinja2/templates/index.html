@@ -1,0 +1,35 @@
+{# Extends the base template — inherits nav, footer, styles #}
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ message }}</h1>
+
+<h2>Template Syntax Quick Reference</h2>
+
+<h3>1. Variables — <code>{{ "{{ variable }}" }}</code></h3>
+<p>Current title: <strong>{{ title }}</strong></p>
+<p>Year: <strong>{{ year }}</strong></p>
+
+<h3>2. Expressions</h3>
+<p>Math: 5 + 3 = <strong>{{ 5 + 3 }}</strong></p>
+<p>String: {{ "hello " ~ "world" }}</p>
+
+<h3>3. Built-in Filters</h3>
+<ul>
+    <li><code>upper</code>: {{ "flask"|upper }}</li>
+    <li><code>lower</code>: {{ "FLASK"|lower }}</li>
+    <li><code>capitalize</code>: {{ "hello world"|capitalize }}</li>
+    <li><code>title</code>: {{ "hello world"|title }}</li>
+    <li><code>length</code>: {{ "Flask"|length }}</li>
+    <li><code>default</code>: {{ undefined_var|default("fallback value") }}</li>
+    <li><code>replace</code>: {{ "Hello World"|replace("World", "Flask") }}</li>
+</ul>
+
+<h3>Navigation Links</h3>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About (lists, loops, conditionals)</a></li>
+    <li><a href="/filters">Filters Demo</a></li>
+    <li><a href="/macros">Macros Demo</a></li>
+</ul>
+{% endblock %}
