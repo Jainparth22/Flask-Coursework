@@ -1,0 +1,39 @@
+{# ============================================================
+MACROS — Reusable template components (like functions)
+============================================================ #}
+
+{# Define a macro for form input fields #}
+{% macro form_field(name, label, type='text', required=false, placeholder='') %}
+<div style="margin-bottom: 1rem;">
+    <label for="{{ name }}" style="display: block; font-weight: bold; margin-bottom: 0.3rem;">
+        {{ label }}{% if required %} <span style="color: red;">*</span>{% endif %}
+    </label>
+    <input type="{{ type }}" id="{{ name }}" name="{{ name }}" placeholder="{{ placeholder }}" {% if required
+        %}required{% endif %} style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
+</div>
+{% endmacro %}
+
+
+{# Define a macro for alert boxes #}
+{% macro alert(message, type='info') %}
+{% set colors = {'info': '#3498db', 'success': '#2ecc71', 'warning': '#f39c12', 'error': '#e74c3c'} %}
+<div
+    style="padding: 1rem; margin: 1rem 0; border-left: 4px solid {{ colors.get(type, '#3498db') }}; background: {{ colors.get(type, '#3498db') }}20; border-radius: 4px;">
+    <strong>{{ type|upper }}:</strong> {{ message }}
+</div>
+{% endmacro %}
+
+
+{# Define a macro for cards #}
+{% macro card(title, body, footer='') %}
+<div
+    style="background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden; margin: 1rem 0;">
+    <div style="padding: 1rem; background: #2c3e50; color: white;">
+        <h3 style="margin: 0;">{{ title }}</h3>
+    </div>
+    <div style="padding: 1rem;">{{ body }}</div>
+    {% if footer %}
+    <div style="padding: 0.75rem 1rem; background: #f8f9fa; border-top: 1px solid #eee;">{{ footer }}</div>
+    {% endif %}
+</div>
+{% endmacro %}

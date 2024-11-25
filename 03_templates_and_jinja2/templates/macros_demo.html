@@ -1,0 +1,50 @@
+{# Import macros from the macros.html file #}
+{% from "macros.html" import form_field, alert, card %}
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<h2>1. Alert Macro</h2>
+{{ alert("This is an info message.") }}
+{{ alert("Operation successful!", "success") }}
+{{ alert("Please check your input.", "warning") }}
+{{ alert("Something went wrong!", "error") }}
+
+<h2>2. Card Macro</h2>
+{{ card("Flask", "A lightweight WSGI web framework.", "Learn more →") }}
+{{ card("Jinja2", "A modern template engine for Python.") }}
+
+<h2>3. Form Field Macro</h2>
+<form method="POST" action="/"
+    style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+    {% for field in fields %}
+    {{ form_field(
+    name=field.name,
+    label=field.label,
+    type=field.type,
+    required=field.required,
+    placeholder='Enter ' ~ field.label|lower
+    ) }}
+    {% endfor %}
+    <button type="submit"
+        style="padding: 0.5rem 2rem; background: #2c3e50; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Submit
+    </button>
+</form>
+
+<hr style="margin: 2rem 0;">
+
+<h2>How Macros Work</h2>
+<p>Macros are like functions in templates. Define once, use anywhere:</p>
+<pre style="background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code>{# Define in macros.html #}
+{%- raw %}
+{% macro alert(message, type='info') %}
+    &lt;div class="alert-{{ type }}"&gt;{{ message }}&lt;/div&gt;
+{% endmacro %}
+
+{# Use in any template #}
+{% from "macros.html" import alert %}
+{{ alert("Hello!", "success") }}
+{% endraw %}</code></pre>
+{% endblock %}
