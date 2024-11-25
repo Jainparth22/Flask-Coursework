@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<h2>Built-in Jinja2 Filters</h2>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; background: white; width: 100%;">
+    <tr>
+        <th>Filter</th>
+        <th>Input</th>
+        <th>Output</th>
+    </tr>
+    <tr>
+        <td><code>upper</code></td>
+        <td>{{ sample_text[:20] }}</td>
+        <td>{{ sample_text[:20]|upper }}</td>
+    </tr>
+    <tr>
+        <td><code>lower</code></td>
+        <td>{{ sample_text[:20] }}</td>
+        <td>{{ sample_text[:20]|lower }}</td>
+    </tr>
+    <tr>
+        <td><code>title</code></td>
+        <td>hello world</td>
+        <td>{{ "hello world"|title }}</td>
+    </tr>
+    <tr>
+        <td><code>capitalize</code></td>
+        <td>hello world</td>
+        <td>{{ "hello world"|capitalize }}</td>
+    </tr>
+    <tr>
+        <td><code>trim</code></td>
+        <td>" spaces "</td>
+        <td>"{{ " spaces "|trim }}"</td>
+    </tr>
+    <tr>
+        <td><code>length</code></td>
+        <td>{{ sample_list }}</td>
+        <td>{{ sample_list|length }}</td>
+    </tr>
+    <tr>
+        <td><code>join</code></td>
+        <td>{{ sample_list }}</td>
+        <td>{{ sample_list|join(", ") }}</td>
+    </tr>
+    <tr>
+        <td><code>sort</code></td>
+        <td>{{ sample_list }}</td>
+        <td>{{ sample_list|sort|join(", ") }}</td>
+    </tr>
+    <tr>
+        <td><code>reverse</code></td>
+        <td>{{ sample_list }}</td>
+        <td>{{ sample_list|reverse|join(", ") }}</td>
+    </tr>
+    <tr>
+        <td><code>first</code></td>
+        <td>{{ sample_list }}</td>
+        <td>{{ sample_list|first }}</td>
+    </tr>
+    <tr>
+        <td><code>last</code></td>
+        <td>{{ sample_list }}</td>
+        <td>{{ sample_list|last }}</td>
+    </tr>
+    <tr>
+        <td><code>default</code></td>
+        <td>undefined_var</td>
+        <td>{{ undefined_var|default("N/A") }}</td>
+    </tr>
+    <tr>
+        <td><code>int</code></td>
+        <td>"42"</td>
+        <td>{{ "42"|int + 8 }}</td>
+    </tr>
+    <tr>
+        <td><code>float</code></td>
+        <td>"3.14"</td>
+        <td>{{ "3.14"|float }}</td>
+    </tr>
+    <tr>
+        <td><code>abs</code></td>
+        <td>-42</td>
+        <td>{{ (-42)|abs }}</td>
+    </tr>
+    <tr>
+        <td><code>round</code></td>
+        <td>3.14159</td>
+        <td>{{ 3.14159|round(2) }}</td>
+    </tr>
+    <tr>
+        <td><code>truncate</code></td>
+        <td>{{ sample_text }}</td>
+        <td>{{ sample_text|truncate(30) }}</td>
+    </tr>
+    <tr>
+        <td><code>wordcount</code></td>
+        <td>{{ sample_text }}</td>
+        <td>{{ sample_text|wordcount }}</td>
+    </tr>
+    <tr>
+        <td><code>replace</code></td>
+        <td>Hello World</td>
+        <td>{{ "Hello World"|replace("World", "Flask") }}</td>
+    </tr>
+    <tr>
+        <td><code>striptags</code></td>
+        <td>&lt;b&gt;bold&lt;/b&gt;</td>
+        <td>{{ "<b>bold</b>"|striptags }}</td>
+    </tr>
+    <tr>
+        <td><code>urlize</code></td>
+        <td>Visit flask.dev</td>
+        <td>{{ "Visit flask.dev"|urlize }}</td>
+    </tr>
+</table>
+
+<hr style="margin: 2rem 0;">
+
+<h2>Custom Filters (defined in app.py)</h2>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; background: white; width: 100%;">
+    <tr>
+        <th>Filter</th>
+        <th>Input</th>
+        <th>Output</th>
+    </tr>
+    <tr>
+        <td><code>reverse_string</code></td>
+        <td>Flask</td>
+        <td>{{ "Flask"|reverse_string }}</td>
+    </tr>
+    <tr>
+        <td><code>format_date</code></td>
+        <td>{{ sample_date }}</td>
+        <td>{{ sample_date|format_date }}</td>
+    </tr>
+    <tr>
+        <td><code>truncate_words(5)</code></td>
+        <td>{{ sample_text }}</td>
+        <td>{{ sample_text|truncate_words(5) }}</td>
+    </tr>
+</table>
+
+<hr style="margin: 2rem 0;">
+
+<h2>Chaining Filters</h2>
+<p>Filters can be chained: <code>{{ "{{ value|filter1|filter2 }}" }}</code></p>
+<p>Example: {{ "hello world"|title|reverse_string }}</p>
+<p><code>{{ '"hello world"|title|reverse_string' }}</code> → <strong>{{ "hello world"|title|reverse_string }}</strong>
+</p>
+{% endblock %}
