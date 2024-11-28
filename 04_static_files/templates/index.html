@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <!-- 
+        STATIC FILE REFERENCE
+        url_for('static', filename='style.css') generates the URL /static/style.css
+        This is the recommended way to reference static files in Flask templates.
+    -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('layout_info') }}">Project Layouts</a>
+    </nav>
+
+    <div class="container">
+        <h1>{{ title }}</h1>
+
+        <h2>How Static Files Work</h2>
+        <p>Flask serves files from the <code>static/</code> folder at the URL <code>/static/</code>.</p>
+
+        <div class="card">
+            <h2>Referencing Static Files</h2>
+            <pre><code>&lt;!-- CSS --&gt;
+&lt;link rel="stylesheet" href="{{ '{{ url_for(\'static\', filename=\'style.css\') }}' }}"&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script src="{{ '{{ url_for(\'static\', filename=\'js/app.js\') }}' }}"&gt;&lt;/script&gt;
+
+&lt;!-- Images --&gt;
+&lt;img src="{{ '{{ url_for(\'static\', filename=\'images/logo.png\') }}' }}" alt="Logo"&gt;</code></pre>
+        </div>
+
+        <div class="card">
+            <h2>Why use <code>url_for('static', ...)</code>?</h2>
+            <ul style="margin-left: 1.5rem;">
+                <li>Works regardless of where the app is mounted</li>
+                <li>Handles URL escaping automatically</li>
+                <li>Easy to change the static folder path later</li>
+                <li>Blueprint-aware for modular apps</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>This page uses:</h2>
+            <p><code>{{ url_for('static', filename='style.css') }}</code></p>
+            <p>The CSS file adds the gradient background, card styles, and typography you see on this page.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Flask Coursework — Module 04</p>
+    </footer>
+</body>
+
+</html>
