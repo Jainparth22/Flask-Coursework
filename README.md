@@ -34,6 +34,20 @@ python app.py
 
 ---
 
+## 📚 Course Modules
+
+### Phase 1 — Fundamentals (Beginner)
+
+| #  | Module | Key Concepts |
+|----|--------|--------------|
+| 01 | [Hello Flask](./01_hello_flask/) | Minimal app, `app.run()`, debug mode |
+| 02 | [Routing & URLs](./02_routing_and_urls/) | Routes, variable rules, `url_for()`, HTTP methods |
+| 03 | [Templates & Jinja2](./03_templates_and_jinja2/) | `render_template()`, inheritance, filters, macros |
+| 04 | [Static Files](./04_static_files/) | Serving CSS/JS/images, project layout |
+| 05 | [Request & Response](./05_request_and_response/) | `request` object, cookies, `jsonify()`, `redirect()`, `abort()` |
+
+---
+
 ## 📖 Official References
 
 - [Flask Documentation (3.1.x)](https://flask.palletsprojects.com/en/stable/)
