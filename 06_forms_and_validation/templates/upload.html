@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>File Upload</h1>
+<form method="POST" enctype="multipart/form-data" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.file.label }}
+        {{ form.file() }}
+        {% for error in form.file.errors %}<p class="error">{{ error }}</p>{% endfor %}
+    </div>
+    {{ form.submit() }}
+</form>
+<p style="margin-top:1rem; color: #888;">Allowed: jpg, png, gif, pdf (max 2MB)</p>
+{% endblock %}
