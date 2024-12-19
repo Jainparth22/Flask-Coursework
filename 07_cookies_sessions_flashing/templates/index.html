@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+
+<div class="card">
+    <h3>Current Status</h3>
+    <div class="status">
+        <p>🍪 Theme Cookie: <strong>{{ theme }}</strong></p>
+        <p>👤 Session User: <strong>{{ username or 'Not logged in' }}</strong></p>
+    </div>
+</div>
+
+<div class="card">
+    <h3>1. Cookies</h3>
+    <p>Raw HTTP cookies — stored on the client, sent with every request.</p>
+    <a href="{{ url_for('set_cookie') }}" class="btn">Set Cookies</a>
+    <a href="{{ url_for('read_cookie') }}" class="btn">Read Cookies</a>
+    <a href="{{ url_for('delete_cookie') }}" class="btn danger">Delete Cookies</a>
+</div>
+
+<div class="card">
+    <h3>2. Sessions</h3>
+    <p>Signed cookies — tamper-proof data stored on the client.</p>
+    <a href="{{ url_for('session_login') }}" class="btn">Login (Set Session)</a>
+    <a href="{{ url_for('session_read') }}" class="btn">Read Session</a>
+    <a href="{{ url_for('session_modify') }}" class="btn">Make Admin</a>
+    <a href="{{ url_for('session_logout') }}" class="btn danger">Logout (Clear)</a>
+</div>
+
+<div class="card">
+    <h3>3. Message Flashing</h3>
+    <p>One-time messages shown on the next page load.</p>
+    <a href="{{ url_for('flash_demo') }}" class="btn">Show All Flash Categories</a>
+</div>
+{% endblock %}

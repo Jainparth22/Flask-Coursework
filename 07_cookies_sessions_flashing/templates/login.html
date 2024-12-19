@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Login</h1>
+<div class="card">
+    <form method="POST">
+        <div style="margin-bottom: 1rem;">
+            <label for="username" style="display:block; font-weight:600; margin-bottom:0.3rem;">Username</label>
+            <input type="text" name="username" id="username" required placeholder="Enter your username"
+                style="width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:4px;">
+        </div>
+        <button type="submit" class="btn">Login</button>
+    </form>
+</div>
+{% endblock %}
