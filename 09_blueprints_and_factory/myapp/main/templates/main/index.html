@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} — Blueprint App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 1rem 2rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        {# url_for with blueprints: 'blueprint_name.function_name' #}
+        <a href="{{ url_for('main.index') }}">Home</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+        <a href="{{ url_for('auth.login') }}">Login</a>
+        <a href="{{ url_for('auth.register') }}">Register</a>
+    </nav>
+    <div class="container">
+        <h1>{{ title }}</h1>
+        <p>Welcome! This app is built with <strong>Blueprints</strong> and the <strong>Application Factory</strong>
+            pattern.</p>
+        <h2>URL Structure</h2>
+        <ul>
+            <li><code>/</code> → main.index (Main Blueprint)</li>
+            <li><code>/about</code> → main.about (Main Blueprint)</li>
+            <li><code>/auth/login</code> → auth.login (Auth Blueprint, prefix: /auth)</li>
+            <li><code>/auth/register</code> → auth.register (Auth Blueprint)</li>
+        </ul>
+        <h2>How url_for Works with Blueprints</h2>
+        <p><code>url_for('main.index')</code> → <code>{{ url_for('main.index') }}</code></p>
+        <p><code>url_for('auth.login')</code> → <code>{{ url_for('auth.login') }}</code></p>
+    </div>
+</body>
+
+</html>
