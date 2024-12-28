@@ -46,6 +46,16 @@ python app.py
 | 04 | [Static Files](./04_static_files/) | Serving CSS/JS/images, project layout |
 | 05 | [Request & Response](./05_request_and_response/) | `request` object, cookies, `jsonify()`, `redirect()`, `abort()` |
 
+### Phase 2 — Intermediate
+
+| #  | Module | Key Concepts |
+|----|--------|--------------|
+| 06 | [Forms & Validation](./06_forms_and_validation/) | Flask-WTF, CSRF, validators, file uploads |
+| 07 | [Cookies, Sessions & Flashing](./07_cookies_sessions_flashing/) | Cookies, `session`, `flash()`, categories |
+| 08 | [Database](./08_database/) | Raw SQLite, Flask-SQLAlchemy, Flask-Migrate |
+| 09 | [Blueprints & Factory](./09_blueprints_and_factory/) | Blueprints, `create_app()`, modular structure |
+| 10 | [Configuration](./10_configuration/) | Config classes, env vars, instance folders |
+
 ---
 
 ## 📖 Official References
