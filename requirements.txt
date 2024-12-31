@@ -20,3 +20,8 @@ Flask-Migrate>=4.0.0
 # --- Authentication ---
 Flask-Login>=0.6.3
 
+# --- REST APIs ---
+Flask-RESTful>=0.3.10
+marshmallow>=3.20.0
+flask-marshmallow>=1.2.0
+
