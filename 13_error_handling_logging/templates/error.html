@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ code }} Error</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f2f5;
+        }
+
+        .error {
+            text-align: center;
+        }
+
+        .error h1 {
+            font-size: 6rem;
+            color: #e74c3c;
+            margin: 0;
+        }
+
+        .error p {
+            font-size: 1.3rem;
+            color: #666;
+        }
+
+        a {
+            color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error">
+        <h1>{{ code }}</h1>
+        <p>{{ message }}</p>
+        <a href="/">← Back to Home</a>
+    </div>
+</body>
+
+</html>
