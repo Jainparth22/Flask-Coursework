@@ -56,6 +56,16 @@ python app.py
 | 09 | [Blueprints & Factory](./09_blueprints_and_factory/) | Blueprints, `create_app()`, modular structure |
 | 10 | [Configuration](./10_configuration/) | Config classes, env vars, instance folders |
 
+### Phase 3 — Advanced
+
+| #  | Module | Key Concepts |
+|----|--------|--------------|
+| 11 | [Authentication](./11_authentication/) | Flask-Login, password hashing, role-based access |
+| 12 | [RESTful APIs](./12_rest_api/) | `MethodView`, Flask-RESTful, marshmallow |
+| 13 | [Error Handling & Logging](./13_error_handling_and_logging/) | Custom error pages, JSON errors, logging |
+| 14 | [Testing](./14_testing/) | pytest, test client, fixtures, coverage |
+| 15 | [Middleware, Signals & Hooks](./15_middleware_signals_hooks/) | `before_request`, `after_request`, signals |
+
 ---
 
 ## 📖 Official References
