@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}New Post{% endblock %}
+{% block content %}
+<h1>New Post</h1>
+<div class="card">
+    <form method="POST">
+        <input type="text" name="title" placeholder="Post title" required>
+        <textarea name="body" rows="10" placeholder="Write your post..." required></textarea>
+        <button type="submit" class="btn">Publish</button>
+    </form>
+</div>
+{% endblock %}
