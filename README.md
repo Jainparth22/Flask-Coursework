@@ -66,6 +66,16 @@ python app.py
 | 14 | [Testing](./14_testing/) | pytest, test client, fixtures, coverage |
 | 15 | [Middleware, Signals & Hooks](./15_middleware_signals_hooks/) | `before_request`, `after_request`, signals |
 
+### Phase 4 — Professional / Production
+
+| #  | Module | Key Concepts |
+|----|--------|--------------|
+| 16 | [Extensions Deep Dive](./16_extensions/) | Flask-Mail, Flask-Caching, Flask-CORS, Flask-Limiter |
+| 17 | [Class-based Views](./17_class_based_views/) | `View`, `MethodView`, pluggable views |
+| 18 | [Background Tasks](./18_background_tasks/) | Celery integration, task queues |
+| 19 | [Deployment](./19_deployment/) | Gunicorn, Docker, HTTPS, production config |
+| 20 | [Capstone — Blog App](./20_capstone_blog/) | Full-stack app combining all concepts |
+
 ---
 
 ## 📖 Official References
@@ -75,3 +85,6 @@ python app.py
 - [Werkzeug WSGI Toolkit](https://werkzeug.palletsprojects.com/en/stable/)
 - [Flask Extensions Registry](https://flask.palletsprojects.com/en/stable/extensions/)
 
+---
+
+> **Tip**: Each module is self-contained. You can jump to any module, but the progression is designed to build on previous knowledge.
